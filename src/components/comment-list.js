@@ -5,7 +5,10 @@ import toggleOpen from '../decorators/toggleOpen'
 
 class CommentList extends Component {
 static propTypes = {
-  article: PropTypes.object.isRequired,
+  article: PropTypes.shape({
+    title: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired
+  }).isRequired,
   isOpen: PropTypes.bool,
   toggleOpen: PropTypes.func.isRequired
 }

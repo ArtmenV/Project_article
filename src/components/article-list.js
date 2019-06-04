@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
-import Article from './article'
+import Article from '../article/article'
 import accordion from '../decorators/accordion'
 
 class ArticleList extends Component {

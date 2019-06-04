@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react'
+import CSSTransition from 'react-addons-css-transition-group'
+import './style.css'
 
 class Article extends PureComponent {
   render() {
@@ -10,7 +12,13 @@ class Article extends PureComponent {
             <h3 ref = {this.setTitleRef}>{article.title}</h3>
               <button onClick = {this.handleBtnClick} className= "test__article-btn">{isOpen ? 'close' : 'open'}</button>
             </div>
+            <CSSTransition
+              transitionName = "article"
+              transitionEnterTimeout = {700}
+              transitionLeaveTimeout = {700}
+              >
             {isOpen && <section>{article.text}</section>}
+            </CSSTransition>
         </div>
       )
     }  

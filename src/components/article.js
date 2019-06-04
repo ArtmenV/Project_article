@@ -8,7 +8,7 @@ class Article extends PureComponent {
         <div>
           <div>
             <h3 ref = {this.setTitleRef}>{article.title}</h3>
-              <button onClick = {this.handleBtnClick}>{isOpen ? 'close' : 'open'}</button>
+              <button onClick = {this.handleBtnClick} className= "test__article-btn">{isOpen ? 'close' : 'open'}</button>
             </div>
             {isOpen && <section>{article.text}</section>}
         </div>

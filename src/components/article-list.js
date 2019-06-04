@@ -20,6 +20,13 @@ class ArticleList extends Component {
       </li>
     )
   }
+
+  componentDidMount() {
+    const {fetchData} = this.props
+    fetchData && fetchData()
+  }
 }
 
-export default accordion(ArticleList)
+const ArticleListWithAccordion = accordion(ArticleList)
+
+export default ArticleListWithAccordion

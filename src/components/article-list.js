@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import Article from '../article/article'
 import accordion from '../decorators/accordion'
 
@@ -29,4 +30,6 @@ class ArticleList extends Component {
 
 const ArticleListWithAccordion = accordion(ArticleList)
 
-export default ArticleListWithAccordion
+export default connect((state) => ({
+  articles: state.articles
+}))(ArticleListWithAccordion)

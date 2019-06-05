@@ -4,7 +4,6 @@ import Select from 'react-select'
 import {findDOMNode} from 'react-dom'
 import ArticleList from './components/article-list'
 import ArticlesChart from './components/articles-chart'
-import articles from './fixtures'
 import UserForm from './components/user-form'
 import Counter from './components/counter'
 
@@ -19,18 +18,18 @@ class App extends Component {
         <UserForm />
         <Counter />
         <Select options = {this.options} value = {this.state.openItem} onChange = {this.handleSelect}/>
-        <ArticleList  articles = {articles} ref = {this.setArticleListRef}/>
-        <ArticlesChart articles = {articles} />
+        <ArticleList ref = {this.setArticleListRef}/>
+        {/* // <ArticlesChart articles = {articles} /> */}
       </div>
     )
   }
 
-  get options() {
-    return articles.map(article => ({
-      label: article.title,
-      value: article.id
-    }))
-  }
+  // get options() {
+  //   return articles.map(article => ({
+  //     label: article.title,
+  //     value: article.id
+  //   }))
+  // }
 
   handleSelect = openItem => this.setState({ openItem })
 

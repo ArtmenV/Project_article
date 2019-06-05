@@ -4,6 +4,13 @@ import { connect } from 'react-redux'
 import { createCommentSelector } from '../selectors'
 
 function Comment({ comment }) {
+  static PropTypes = {
+    comment.PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      user: PropTypes.string.isRequired
+    })
+
+  }
   return (
     <div>
       {comment.text} <b>by {comment.user}</b>
@@ -11,12 +18,12 @@ function Comment({ comment }) {
   )
 }
 
-Comment.propTypes = {
-  comment: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    user: PropTypes.string.isRequired
-  }).isRequired
-}
+// Comment.propTypes = {
+//   comment: PropTypes.shape({
+//     text: PropTypes.string.isRequired,
+//     user: PropTypes.string.isRequired
+//   }).isRequired
+// }
 
 const createMapStateToProps = () => {
   const commentSelector = createCommentSelector()

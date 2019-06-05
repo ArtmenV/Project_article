@@ -22,7 +22,7 @@ class DateRange extends Component {
           selectedDays={(day) => DateUtils.isDayInRange(day, { from, to })}
           onDayClick={this.handleDayClick}
         />
-        {selectedRange}
+        {selectedRan ge}
       </div>
     )
   }
